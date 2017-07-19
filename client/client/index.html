@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>chatterbox</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- dependencies -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="../lib/jquery-timeago.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script>
+      // YOU DO NOT NEED TO EDIT THIS CODE
+      if (!/(&|\?)username=/.test(window.location.search)) {
+        var newSearch = window.location.search;
+        if (newSearch !== '' & newSearch !== '?') {
+          newSearch += '&';
+        }
+        var user = (prompt('What is your name?') || 'anonymous');
+        newSearch += 'username=' + user;
+        window.location.search = newSearch;
+      }
+    </script>
+    <!-- your scripts -->
+    <script src="env/config.js"></script>
+    <script src="scripts/app.js"></script>
+  </head>
+  <body>
+    <div id="main">
+
+      <h1>chatterbox</h1>
+      <select id="roomSelect">
+        <option value="lobby">lobby</option>
+        <option value="testing">testing</option>
+      </select>
+        <input id="new-room"></input>
+        <button id="create-room">Create room option</button>
+      <div id="textBox">
+        <textarea id="text-input" rows="2" cols="50">Send a message!</textarea>
+        <button class="submit" id="send">Send</button>
+      </div> 
+    </div>
+    <div id="chats"></div>    
+  </body>
+</html>
